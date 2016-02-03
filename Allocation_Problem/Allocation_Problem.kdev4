@@ -1,0 +1,4 @@
+[Project]
+Name=Allocation_Problem
+Manager=KDevCustomMakeManager
+VersionControl=kdevgit
