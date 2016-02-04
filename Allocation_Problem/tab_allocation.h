@@ -12,11 +12,15 @@ struct tab_allocation {
 typedef struct tab_allocation tab_allocation;
 
 
+void allocate_tab(int *** tab, int nb_crates, int nb_location);
+
+void display_tab(int *** tab, int nb_crates, int nb_location);
+
+void delete_tab(int ** _tab, int nb_crates, int nb_location);
+
 /**
  */
-void print_tab(tab_allocation * allocation);
-
-void delete_tab(int *** _tab, int nb_crates, int nb_location);
+void display_tab_allocation(tab_allocation * allocation);
 
 void delete_tab_allocation(tab_allocation* allocation);
 
