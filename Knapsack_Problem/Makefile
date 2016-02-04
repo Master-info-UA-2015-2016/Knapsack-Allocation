@@ -3,8 +3,8 @@ CFLAGS=-Wall
 
 debug:clean
 	$(CC) $(CFLAGS) -g -o knapsack_problem others.c file.c main.c
-	
-	
+
+
 debug_full: CFLAGS += -DDEBUG=1
 debug_full: clean debug
 	
