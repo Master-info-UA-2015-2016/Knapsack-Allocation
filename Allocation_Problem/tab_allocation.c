@@ -11,3 +11,17 @@ void print_tab(tab_allocation * allocation) {
 		printf("\n");
 	}
 }
+
+void delete_tab(tab_allocation* allocation)
+{
+    int i;
+    for (i= 0; i < allocation->nb_crates; ++i){
+	int j;
+	for (j= 0; j < allocation->nb_location; ++j){
+	    free(allocation->tab[i]);
+	}
+    }
+    free(allocation->tab);
+    
+    free(allocation);
+}

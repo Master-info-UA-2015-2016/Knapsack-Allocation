@@ -18,11 +18,11 @@ int max(int n, int** values)
 	
 	int i;
 	for (i = 0; i < n; ++i){
-	    if (values[i] > max){
-		max= values[i];
+	    if ((*values)[i] > max){
+		max= (*values)[i];
 	    }
 	}
-    }else fprintf("Error, can't find max value of an unitialized array");
+    }else fprintf(stderr, "Error, can't find max value of an unitialized array");
     
     return max;
 }
