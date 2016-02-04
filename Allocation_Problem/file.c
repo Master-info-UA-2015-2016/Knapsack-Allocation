@@ -53,7 +53,7 @@ tab_allocation* create_tab(char* filename)
 	tab_a= (tab_allocation*)malloc(sizeof(tab_allocation));
 	
 	if ( read_first_line(file, &(tab_a->nb_location), &(tab_a->nb_crates)) ){
-	    tab_a->tab= (int**)malloc( (tab_a->nb_crates +1)*sizeof(int*));
+	    tab_a->tab= (int**)malloc( (tab_a->nb_crates)*sizeof(int*));
 	    
 	    int i;
 	    for (i= 0; i < tab_a->nb_crates; ++i){
@@ -91,4 +91,5 @@ tab_allocation* create_tab(char* filename)
     }
     return tab_a;
 }
+
 
