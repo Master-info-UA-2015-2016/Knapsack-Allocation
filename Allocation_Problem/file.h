@@ -16,10 +16,10 @@ typedef struct tab_allocation tab_allocation;
 
 /**
  */
-int read_first_line(FILE* file);
+int read_first_line(FILE* file, int * nb_location, int * nb_crates);
 
 /**
  */
-int** create_tab(char* filename);
+tab_allocation create_tab(char* filename);
 
 #endif
