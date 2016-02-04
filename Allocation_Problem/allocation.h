@@ -3,6 +3,6 @@
 
 #include "file.h"
 
-int dynamic_optimal(tab_allocation* tab_a, int alpha);
+int dynamic_optimal(tab_allocation* tab_a, int k, int alpha);
 
 #endif
