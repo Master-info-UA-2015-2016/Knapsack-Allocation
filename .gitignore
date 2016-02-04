@@ -27,6 +27,9 @@
 *.i*86
 *.x86_64
 *.hex
+allocation_problem
+knapsack_problem
+
 
 # Debug files
 *.dSYM/

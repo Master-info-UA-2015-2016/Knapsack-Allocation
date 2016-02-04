@@ -53,9 +53,12 @@ tab_allocation* create_tab(char* filename)
 	tab_a= (tab_allocation*)malloc(sizeof(tab_allocation));
 	
 	if ( read_first_line(file, &(tab_a->nb_location), &(tab_a->nb_crates)) ){
+	    tab_a->tab= (int**)malloc(tab_a->nb_crates*sizeof(int*));
 	    
 	    int i;
 	    for (i= 0; i < tab_a->nb_crates; ++i){
+		tab_a->tab[i]= (int*)malloc(tab_a->nb_location*sizeof(int));
+		
 		if (fgets(line, 30, file) == NULL){
 		    fprintf(stderr, "File empty");
 		    return 0;
@@ -67,7 +70,7 @@ tab_allocation* create_tab(char* filename)
 		    char* values= strtok(line, " ");
 		    if (values != NULL){
 			printdebug ("%d e location profit for %d crates : %s\n", j, i, values);
-			tab_a->tab[i][j].id= atoi(values);
+			tab_a->tab[i][j]= atoi(values);
 			// next value
 			values = strtok (NULL, " ");
 		    } else {
