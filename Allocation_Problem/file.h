@@ -21,7 +21,10 @@ int read_first_line(FILE* file, int * nb_location, int * nb_crates);
 
 /**
  */
-
 tab_allocation* create_tab(char* filename);
+
+/**
+ */
+void print_tab(tab_allocation * allocation);
 
 #endif

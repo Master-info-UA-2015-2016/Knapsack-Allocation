@@ -5,6 +5,8 @@
 
 
 int main(int argc, char **argv) {
-    printf("Hello World! \n");
-    return 0;
+	tab_allocation allocation;
+	allocation = *(create_tab("Allocation.txt"));
+	print_tab(&allocation);
+	return 0;
 }
