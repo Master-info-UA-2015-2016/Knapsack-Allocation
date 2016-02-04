@@ -22,6 +22,4 @@ void delete_tab(tab_allocation* allocation)
 	}
     }
     free(allocation->tab);
-    
-    free(allocation);
 }
