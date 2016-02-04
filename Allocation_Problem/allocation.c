@@ -10,6 +10,15 @@ void init_dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
 }
 
 void dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
+    int k;
+    int alpha;
+    for(k= 1; k < tab_a->nb_location; ++k){
 	
+	for (alpha= 1; alpha < tab_a->nb_crates; ++alpha){
+	    // Zk(alpha) = max (Ck(Xk) + *(z)[alpha- ???][k-1] )
+// 	    *(z)[alpha][k]= 0;
+	}
+	
+    }
 	
 }
