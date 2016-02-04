@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "file.h"
 
+#include "file.h"
+#include "tab_allocation.h"
 
 
 int main(int argc, char **argv) {

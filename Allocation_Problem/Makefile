@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS="-Wall"
 
 debug:clean
-	$(CC) $(CFLAGS) -g -o allocation_problem others.c file.c main.c
+	$(CC) $(CFLAGS) -g -o allocation_problem tab_allocation.c others.c file.c main.c
 	
 		
 debug_full: CFLAGS += -DDEBUG=1
