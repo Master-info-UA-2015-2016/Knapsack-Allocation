@@ -56,7 +56,7 @@ tab_allocation* create_tab(char* filename)
 	    tab_a->tab= (int**)malloc( (tab_a->nb_crates +1)*sizeof(int*));
 	    
 	    int i;
-	    for (i= 0; i <= tab_a->nb_crates; ++i){
+	    for (i= 0; i < tab_a->nb_crates; ++i){
 		tab_a->tab[i]= (int*)malloc(tab_a->nb_location*sizeof(int));
 		
 		if (fgets(line, 30, file) == NULL){
