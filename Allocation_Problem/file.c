@@ -53,10 +53,10 @@ tab_allocation* create_tab(char* filename)
 	tab_a= (tab_allocation*)malloc(sizeof(tab_allocation));
 	
 	if ( read_first_line(file, &(tab_a->nb_location), &(tab_a->nb_crates)) ){
-	    tab_a->tab= (int**)malloc(tab_a->nb_crates*sizeof(int*));
+	    tab_a->tab= (int**)malloc( (tab_a->nb_crates +1)*sizeof(int*));
 	    
 	    int i;
-	    for (i= 0; i < tab_a->nb_crates; ++i){
+	    for (i= 0; i <= tab_a->nb_crates; ++i){
 		tab_a->tab[i]= (int*)malloc(tab_a->nb_location*sizeof(int));
 		
 		if (fgets(line, 30, file) == NULL){
@@ -64,23 +64,23 @@ tab_allocation* create_tab(char* filename)
 		    return 0;
 		}
 		
+		char* values= strtok(line, " ");
+		    
 		// Value reading
 		int j;
 		for (j= 0; j < 3; ++j){
-		    char* values= strtok(line, " ");
 		    if (values != NULL){
 			printdebug ("%d e location profit for %d crates : %s\n", j, i, values);
 			tab_a->tab[i][j]= atoi(values);
 			// next value
 			values = strtok (NULL, " ");
 		    } else {
-			fprintf(stderr, "No id");
+			fprintf(stderr, "Missing values in file");
 			return 0;
 		    }
 		}
 		
 	    }
-	    
 	} else {
 	    fprintf(stderr, "Error while reading first line, impossible to continue");
 	}
