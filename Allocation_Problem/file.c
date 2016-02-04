@@ -38,62 +38,54 @@ int read_first_line(FILE* file)
     } else { return 0;}*/ return 0;
 }
 
-int** create_tab(char* filename)
+tab_allocation* create_tab(char* filename)
 {
-	int** tab;
-    /*char line[31];
+    tab_allocation* tab_a = NULL;
+    
+    // Reading
+    FILE *file;
+    file= fopen(filename,"r");
     
     if (file != NULL)
-    {    
-	tab_items items= (tab_items)malloc(items_nb*sizeof(item));
+    {
+	char line[31];
 	
-	int i;
-	for (i= 0; i < items_nb; ++i){
-	    if (fgets(line, 30, file) == NULL){
-		fprintf(stderr, "File empty");
-		return 0;
+	tab_a= (tab_allocation*)malloc(sizeof(tab_allocation));
+	
+	if ( read_first_line(file, &(tab_a->nb_location), &(tab_a->nb_crates)) ){
+	    
+	    int i;
+	    for (i= 0; i < tab_a->nb_crates; ++i){
+		if (fgets(line, 30, file) == NULL){
+		    fprintf(stderr, "File empty");
+		    return 0;
+		}
+		
+		// Value reading
+		int j;
+		for (j= 0; j < 3; ++j){
+		    char* values= strtok(line, " ");
+		    if (values != NULL){
+			printdebug ("%d e location profit for %d crates : %s\n", j, i, values);
+			tab_a->tab[i][j].id= atoi(values);
+			// next value
+			values = strtok (NULL, " ");
+		    } else {
+			fprintf(stderr, "No id");
+			return 0;
+		    }
+		}
+		
 	    }
 	    
-	    // Value reading
-	    char* values= strtok(line, " ");
-	    if (values != NULL){
-		printdebug ("item id : %s\n", values);	    
-		items[i].id=	atoi(values);
-		// next value
-		values = strtok (NULL, " ");
-	    } else {
-		fprintf(stderr, "No id");
-		return 0;
-	    }
-	    
-	    if (values != NULL){
-		printdebug("size : %s\n", values);
-		items[i].a=   atoi(values);
-		// next value
-		values = strtok (NULL, " ");
-	    } else {
-		fprintf(stderr, "No size");
-		return 0;
-	    }
-	    
-	    if (values != NULL){
-		printdebug("cost : %s\n", values);
-		items[i].c=   atoi(values);
-		// useless to get next value
-	    } else {
-		fprintf(stderr, "No cost");
-		return 0;
-	    }
-	    
-	    printdebug("DEBUG : Item [%d] created : size %d, cost %d\n", items[i].id, items[i].a, items[i].c);
-	    
+	} else {
+	    fprintf(stderr, "Error while reading first line, impossible to continue");
 	}
-	return items;
 	
     } else {
-	fprintf(stderr, "Items creation impossible because file can't be read");
+	fprintf(stderr, "Allocation table impossible to create because file can't be read");
 	return NULL;
-    }*/
-	return tab;
+    }
+    return tab_a;
 }
 
