@@ -17,7 +17,6 @@ void init_dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
 }
 
 // Zk(alpha) = max (Ck(Xk) + *(z)[alpha- ???][k-1] )
-//*(z)[alpha][k]= 0;
 
 void dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
     int k, xk, max, z_tmp, x_tmp;
@@ -38,4 +37,12 @@ void dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
 			(*x)[alpha][k] = x_tmp;
 		}
     }
+}
+
+void optimal_solution(int *** x, int ** solution, int alpha, int k) {
+	if (k>=0){
+		(*solution)[k] = (*x)[alpha][k]);
+		xk = (*x)[alpha][k];
+		optimal_solution(z, x, alpha-xk, k-1)
+	}
 }

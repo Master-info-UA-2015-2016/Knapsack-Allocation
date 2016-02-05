@@ -23,6 +23,8 @@ int main(int argc, char **argv) {
 	tab_allocation* allocation;
 	int ** z;
 	int ** x;
+	int * sol;
+	int i;
 	allocation = create_tab("Allocation.txt");
 	display_tab_allocation(allocation);
 	printf("\n");
@@ -37,12 +39,17 @@ int main(int argc, char **argv) {
 	printf("\n");
 	display_tab(&x, allocation->nb_crates, allocation->nb_location);
 	printf("\n");
+	sol = (int*)malloc(allocation->nb_location*sizeof(int));
+	optimal_solution(&x, &sol, allocation->nb_crates-1, allocation->nb_location-1);
 	
+	for (i = 0; i < allocation->nb_location-1; ++i) printf("%d;"sol[i]);
 	// Memory liberation
 	delete_tab(z, allocation->nb_crates, allocation->nb_location);
 	delete_tab(x, allocation->nb_crates, allocation->nb_location);
 	delete_tab_allocation(allocation);
 	free(allocation);
+	
+	
 
 
     ftime(&t1);
