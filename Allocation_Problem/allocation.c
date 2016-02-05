@@ -41,8 +41,8 @@ void dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
 
 void optimal_solution(int *** x, int ** solution, int alpha, int k) {
 	if (k>=0){
-		(*solution)[k] = (*x)[alpha][k]);
-		xk = (*x)[alpha][k];
-		optimal_solution(z, x, alpha-xk, k-1)
+		int xk = (*x)[alpha][k];
+		(*solution)[k] = xk;
+		optimal_solution(x, solution, alpha-xk, k-1);
 	}
 }

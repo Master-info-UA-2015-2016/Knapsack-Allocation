@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 	sol = (int*)malloc(allocation->nb_location*sizeof(int));
 	optimal_solution(&x, &sol, allocation->nb_crates-1, allocation->nb_location-1);
 	
-	for (i = 0; i < allocation->nb_location-1; ++i) printf("%d;"sol[i]);
+	for (i = 0; i < allocation->nb_location-1; ++i) printf("%d;", sol[i]);
 	// Memory liberation
 	delete_tab(z, allocation->nb_crates, allocation->nb_location);
 	delete_tab(x, allocation->nb_crates, allocation->nb_location);
