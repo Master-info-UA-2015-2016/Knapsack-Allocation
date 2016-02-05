@@ -28,10 +28,7 @@ void delete_tab(int ** _tab, int nb_crates, int nb_location)
 {
     int i;
     for (i= 0; i < nb_crates; ++i){
-	int j;
-	for (j= 0; j < nb_location; ++j){
-	    free(_tab[i]);
-	}
+	free(_tab[i]);
     }
     free(_tab);
 }

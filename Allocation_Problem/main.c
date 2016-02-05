@@ -30,14 +30,16 @@ int main(int argc, char **argv) {
 	allocate_tab(&x, allocation->nb_crates, allocation->nb_location);
 	init_dynamic_optimal(allocation, &z, &x);
 	
+	printf("\n");
 	display_tab(&z, allocation->nb_crates, allocation->nb_location);
+	printf("\n");
 	display_tab(&x, allocation->nb_crates, allocation->nb_location);
 	
 	
 	// Memory liberation
-	delete_tab_allocation(allocation);
 	delete_tab(z, allocation->nb_crates, allocation->nb_location);
 	delete_tab(x, allocation->nb_crates, allocation->nb_location);
+	delete_tab_allocation(allocation);
 
 
     ftime(&t1);

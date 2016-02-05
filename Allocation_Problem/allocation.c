@@ -6,6 +6,13 @@ void init_dynamic_optimal(tab_allocation* tab_a, int *** z, int *** x){
 	for (i = 0; i < tab_a->nb_crates; ++i) {
 		(*z)[i][0] = tab_a->tab[i][0];
 		(*x)[i][0] = i;
+		
+		// Initialization of tabs
+		int j;
+		for (j= 1; j < tab_a->nb_location; ++j){
+		    (*z)[i][j] = 0;
+		    (*x)[i][j] = 0;    
+		}
 	}
 }
 
