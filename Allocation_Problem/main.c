@@ -25,14 +25,17 @@ int main(int argc, char **argv) {
 	int ** x;
 	allocation = create_tab("Allocation.txt");
 	display_tab_allocation(allocation);
+	printf("\n");
 
 	allocate_tab(&z, allocation->nb_crates, allocation->nb_location);
 	allocate_tab(&x, allocation->nb_crates, allocation->nb_location);
 	init_dynamic_optimal(allocation, &z, &x);
+	dynamic_optimal(allocation, &z, &x);
 	
 	display_tab(&z, allocation->nb_crates, allocation->nb_location);
+	printf("\n");
 	display_tab(&x, allocation->nb_crates, allocation->nb_location);
-	
+	printf("\n");
 	
 	// Memory liberation
 	delete_tab_allocation(allocation);
