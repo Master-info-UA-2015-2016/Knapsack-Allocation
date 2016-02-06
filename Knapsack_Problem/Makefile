@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall
 
 debug:clean
-	$(CC) $(CFLAGS) -g -o knapsack_problem others.c file.c main.c
+	$(CC) $(CFLAGS) -g -o knapsack_problem others.c file.c tab_knapsack.c knapsack.c main.c
 
 
 debug_full: CFLAGS += -DDEBUG=1
