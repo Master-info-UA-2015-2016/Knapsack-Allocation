@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #to change student to edit STUDENT_NAME
-STUDENT_NAME="GARNIER_Antoine"
+STUDENT_NAME="DEFAYE_Johan"
 
 FILES_PATH="/resources"
 

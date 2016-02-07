@@ -8,4 +8,4 @@ FILES_DIR="./resources/"
 echo "file name : "$FILES_DIR$STUDENT_NAME.txt
 echo ""
 
-./knapsack_branch-and-bound $FILES_DIR$STUDENT_NAME.txt
+./Branch_and_bound $FILES_DIR$STUDENT_NAME.txt
