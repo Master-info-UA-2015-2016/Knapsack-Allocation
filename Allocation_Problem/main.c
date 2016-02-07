@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
 	delete_tab(x, allocation->nb_crates, allocation->nb_location);
 	delete_tab_allocation(allocation);
 	free(allocation);
-	
+	free(sol);
 	
 
 
