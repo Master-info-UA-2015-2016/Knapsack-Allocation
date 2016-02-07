@@ -27,8 +27,8 @@
 *.i*86
 *.x86_64
 *.hex
-allocation_problem
-knapsack_problem
+./Allocation_Probelm/allocation_problem
+./Knapsack_Problem/knapsack_problem
 
 
 # Debug files
