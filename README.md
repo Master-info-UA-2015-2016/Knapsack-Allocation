@@ -1,5 +1,6 @@
-# Knapsack-Allocation
+# Knapsack-Allocation - Florian David and Johan DEFAYE
 ## Lab Session - Dynamic programming for 0-1 knapsack problem and an allocation problem based on egg production. Developed in C.
+(The rest of the text is in French)
 
 ### Organisation :
   Puisque le projet est séparé en deux parties, sur la programmation dynamique, nous avons crée deux dossier distincts, l'un pour le "Knapsack problem" et l'autre pour le problème d'allocation de ressources.
@@ -72,7 +73,7 @@ CPU time : 0.003000 seconds. ; 0.003000 seconds. ; 0.003000 seconds.
 - ILP (time ./glpsol_knapsack_DAVID.sh) :
 real	0m0.034s
 user	0m0.029s
-sys		0m0.002s
+sys	0m0.002s
 
 real	0m0.047s
 user	0m0.031s
@@ -81,6 +82,10 @@ sys	0m0.013s
 real	0m0.039s
 user	0m0.031s
 sys	0m0.006s
+
+La solution la plus performante est donc le programme C avec l'algorithme "Branch and bound", la solution en programmation reste efficace au vue du temps de mise en place demandé.
+Cependant, les faible durées d'exécution ne permettent pas d'exclure l'utilisation la programmation dynamique dans l'éventuelle utilisation à plus grande échelle d'un algorithme de résolution de problème. Il s'agirait de tester sur un plus grande variété de données, et des données plus "fournies" ; ici, les différences de temps d'exécutions sont négligeables.
+La solution ILP offre un compromis entre rapidité de développement et performances raisonnables.
 
 ### Problèmes rencontrés :
 - Comment implémenter l'algorithme et représenter les solutions:
