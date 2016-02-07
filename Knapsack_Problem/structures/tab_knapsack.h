@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "./structures/item.h"
+#include "./item.h"
 
 struct tab_knapsack {
 	int capacity;

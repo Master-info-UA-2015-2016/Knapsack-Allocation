@@ -1,7 +1,7 @@
 #ifndef KNAPSACK_H
 #define KNAPSACK_H
 
-#include "tab_knapsack.h"
+#include "./structures/tab_knapsack.h"
 
 void init_dynamic_optimal(tab_knapsack* tab_k, int *** z, int *** x);
 
