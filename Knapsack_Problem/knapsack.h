@@ -7,6 +7,6 @@ void init_dynamic_optimal(tab_knapsack* tab_k, int *** z, int *** x);
 
 void dynamic_optimal(tab_knapsack* tab_k, int *** z, int *** x);
 
-void optimal_solution(int *** x, int ** solution, int alpha, int k);
+void optimal_solution(tab_knapsack *tab_k, int *** x, int ** solution, int alpha, int k);
 
 #endif
