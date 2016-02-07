@@ -64,14 +64,36 @@ DEFAYE Johan :
 CPU time : 0.118000 seconds. ; 0.126000 seconds. ; 0.108000 seconds.
 - Branch and bound (Knapsack_Problem/for_compare/DEFAYE_Branch_bound.sh) :
 CPU time : 0.004000 seconds. ; 0.004000 seconds. ; 0.004000 seconds.
-- ILP (glpsol_knapsack_DEFAYE.sh) :
+- ILP (time ./glpsol_knapsack_DEFAYE.sh) :
+real	0m0.029s
+user	0m0.014s
+sys	0m0.012s
+
+real	0m0.051s
+user	0m0.037s
+sys	0m0.013s
+
+real	0m0.047s
+user	0m0.026s
+sys	0m0.017s
 
 DAVID Florian :
 - Dynamic programming (Knapsack_Problem/DAVID_knapsack.sh) :
 CPU time :  0.112000 seconds. ; 0.114000 seconds. ; 0.134000 seconds.
 - Branch and bound (Knapsack_Problem/for_compare/DAVID_Branch_bound.sh) :
 CPU time : 0.003000 seconds. ; 0.003000 seconds. ; 0.003000 seconds.
-- ILP (glpsol_knapsack_DAVID.sh) :
+- ILP (time ./glpsol_knapsack_DAVID.sh) :
+real	0m0.034s
+user	0m0.029s
+sys		0m0.002s
+
+real	0m0.047s
+user	0m0.031s
+sys	0m0.013s
+
+real	0m0.039s
+user	0m0.031s
+sys	0m0.006s
 
 
 ### Problèmes rencontrés :
