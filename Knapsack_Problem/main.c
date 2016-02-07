@@ -26,10 +26,12 @@ int main(int argc, char **argv) {
 	else {
 		loadInstance(argv[1], &(tab_k.nb_items), &(tab_k.capacity), &(tab_k.items));
 		
+		// Creation of arrays Z and X
 		allocate_tab(&z, tab_k.capacity, tab_k.nb_items);
 		allocate_tab(&x, tab_k.capacity, tab_k.nb_items);
 		sol = (int *)malloc((tab_k.nb_items)*sizeof(int));
 
+		// Search of maximum profit by number f crate by location, stored into Z and X
 		dynamic_optimal(&tab_k, &z, &x);
 		optimal_solution(&tab_k, &x, &sol, tab_k.capacity, tab_k.nb_items-1);
 		printf("\nItem in the knapsack : \n");
