@@ -1,14 +1,30 @@
 # Knapsack-Allocation
 ## Lab Session - Dynamic programming for 0-1 knapsack problem and an allocation problem based on egg production. Developed in C.
 
+### Organisation :
+  Puisque le projet est séparé en deux parties, sur la programmation dynamique, nous avons crée deux dossier distincts, l'un pour le "Knapsack problem" et l'autre pour le problème d'allocation de ressources.
+  
+  
 ### Allocation problem :
+  Les fonctions de l'algorithme permettant la résolution du problème se trouvent dans le fichier allocation.c
+  Le fichier file.c contient les fonctions utiles à la lecture d'un fichiers de données au format texte.
+  Le fichier tab_allocation.h et tab_allocation.h contiennent la structure contenant les données du problème et les fonctions permettant de la manipuler.
+  Les fichiers others.h et others.c contiennent une fonction printdebug, affichant avec le même format qu'un printf (attribut de compilation pour gcc ajouté dans le .h afin de contrôler le respect de ce format) seulement si une variable préprocesseur DEBUG a pour valeur 1. Sinon la fonction printdebug n'a aucun effet. La variable DEBUG est définie lors de la compilation, l'option 'debug_full' du Makefile permet ainsi d'afficher un suivi du programme lors de son exécution, mais ralentit fortement celle-ci.
+  
+    En reprenant l'exemple du cours, nous avons procédé ainsi :
+    	->
+  
+  
+#### Instructions d'exécution :
+  - Lancer le script Allocation.sh depuis un terminal permet de lancer l'exécution du programme avec le fichier allocation.txt. On peut également lancer le programme directement, avec un paramètre ou non (par défaut, c'est le fichier nommé allocation.txt qui est utilisé). 
+- Pour utiliser d'autres fichiers, on peut soit modifier la ligne du scripts où le 'FILE_NAME' est définie,  avec le chemin d'un fichier existant (sans l'extension, qui doit être '.txt'), ou appeler directement le programme en ligne de commande avec le nom du fichier en paramètre.
 
 
 ### Knapsack problem :
   Le dossier "structures" contient les structures du programme --item et tab_knapsack-- et les fonctions associées à celles-ci.
   Le fichier knapsack.c contient les fonctions utiles à la résolution du probleme.
   Le fichier file.c contient les fonctions utiles à la lecture d'un fichiers de données au format texte.
-  Les fichiers others.h et others.c contiennent une fonction printdebug, affichant avec le même format qu'un printf (attribut de compilation pour gcc ajouté dans le .h afin de contrôler le respect de ce format) seulement si une variable préprocesseur DEBUG a pour valeur 1. Sinon la fonction printdebug n'a aucun effet. La variable DEBUG est définie lors de la compilation, l'option 'debug_full' du Makefile permet ainsi d'afficher un suivi du programme lors de son exécution, mais ralentit fortement celle-ci.
+  Les fichiers others.h et others.c sont également présents afin d'afficher d'avantage d'informations d'exécution, en utilise l'instruction "make debug_full"
   
   Afin de comparer les performances des différentes solutions de résolutions du "knapsack problem", le dossier "for_compare" contient les précédentes solutions mises en place ("Branch and bound" et "Linear Programming").
 
