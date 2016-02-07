@@ -57,6 +57,22 @@
 	- Ces scripts vérifient qu'il existe de fichier ilp contenant les données (fichier contenant la partie 'data;' du problème) pour l'élève. Si ce fichier n'existe pas (il doit avoir un nom de la forme "[STUDENT_Name].data.ilp"), un script Perl prenant en paramètres le nom fichier texte et un nom de fichier de sortie est exécuté et génère le fichier de données à utiliser.
 	- Pour utiliser d'autres fichiers texte, on peut ici aussi modifier le 'STUDENT_NAME' dans le script, avec le nom d'un fichier qui aura été placé dans le dossier 'resources'.
 	- Les fichiers générés pas l'exécution de ces scripts peuvent être effacé avec l'exécution de 'make clean', depuis le dossier "for_compare".
-				
+
+#### Résultats : 
+DEFAYE Johan : 
+- Dynamic programming (Knapsack_Problem/DEFAYE_knapsack.sh) :
+CPU time : 0.118000 seconds. ; 0.126000 seconds. ; 0.108000 seconds.
+- Branch and bound (Knapsack_Problem/for_compare/DEFAYE_Branch_bound.sh) :
+CPU time : 0.004000 seconds. ; 0.004000 seconds. ; 0.004000 seconds.
+- ILP (glpsol_knapsack_DEFAYE.sh) :
+
+DAVID Florian :
+- Dynamic programming (Knapsack_Problem/DAVID_knapsack.sh) :
+CPU time :  0.112000 seconds. ; 0.114000 seconds. ; 0.134000 seconds.
+- Branch and bound (Knapsack_Problem/for_compare/DAVID_Branch_bound.sh) :
+CPU time : 0.003000 seconds. ; 0.003000 seconds. ; 0.003000 seconds.
+- ILP (glpsol_knapsack_DAVID.sh) :
+
+
 ### Problèmes rencontrés :
 
