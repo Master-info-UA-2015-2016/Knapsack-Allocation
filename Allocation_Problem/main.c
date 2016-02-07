@@ -10,14 +10,18 @@ int main(int argc, char **argv) {
     
     struct timeb t0, t1;    /* Timers */
     double cpu_time;        /* Time */
+    char* data_filename;
     
     ftime(&t0);
 
     if(argc != 2)
     {
-	fprintf(stderr, "\nPlease, call the program with an argument, that is the instance file name.\n");
-	printf("\nexit(EXIT_FAILURE) mis en commentaire, enlever le commentaire\n");
-// 	exit(EXIT_FAILURE);
+	printf("\nYou didn't, call the program with an argument, the default file is used.\n");
+	data_filename="Allocation.txt";
+    }
+    else {
+	printf("\nThe file passed in argument is used\n");
+	data_filename= argv[1];
     }
 
 	tab_allocation* allocation;
@@ -25,7 +29,7 @@ int main(int argc, char **argv) {
 	int ** x;
 	int * sol;
 	int i;
-	allocation = create_tab("Allocation.txt");
+	allocation = create_tab(data_filename);
 	display_tab_allocation(allocation);
 	printf("\n");
 
