@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 	tab_knapsack tab_k;
 	int ** z;
 	int ** x;
-	loadInstance("DEFAYE_Johan.txt", &(tab_k.nb_items), &(tab_k.capacity), &(tab_k.items));
+	loadInstance("exemple.txt", &(tab_k.nb_items), &(tab_k.capacity), &(tab_k.items));
 	display_tab_knapsack(&tab_k);
 	allocate_tab(&z, tab_k.capacity, tab_k.nb_items);
 	allocate_tab(&x, tab_k.capacity, tab_k.nb_items);
@@ -15,5 +15,9 @@ int main(int argc, char **argv) {
 	dynamic_optimal(&tab_k, &z, &x);
 	display_tab(&z, tab_k.capacity, tab_k.nb_items);
 	display_tab(&x, tab_k.capacity, tab_k.nb_items);
+	
+	delete_tab(z,tab_k.capacity, tab_k.nb_items);
+	delete_tab(x,tab_k.capacity, tab_k.nb_items);
+	delete_tab_knapsack(&tab_k);
     return 0;
 }
